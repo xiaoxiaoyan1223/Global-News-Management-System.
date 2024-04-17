@@ -15,6 +15,37 @@ export default function Home() {
   const [allList, setallList] = useState([])
   const barRef = useRef()
   const pieRef=useRef()
+  const ajax=()=>{
+    // 利用json-server操作接口数据
+// 取数据
+//     axios.get("http://localhost:8000/posts/2").then(res=>{
+//       console.log(res.data)
+//     })
+//   }
+//   // 发数据
+//   axios.post("http://localhost:8000/posts/2",{
+//     title:"111"
+//   })
+//   // 修改put,会完全替换原来的
+//   axios.put("http://localhost:8000/posts/2",{
+//     title:"修改111"
+//   })
+// // 补丁patch
+//   axios.patch("http://localhost:8000/posts/2",{
+//     title:"只修改原来中的title"
+//   })
+//   // 删除
+//   axios.delete("http://localhost:8000/posts/2")
+//   // 向下关联获取数据 获取文章下的评论
+//   axios.get("http://localhost:8000/posts?_embed=comments").then(res=>{
+//       console.log(res.data)
+//     })
+//   }
+// // 向上关联获取数据
+//  axios.get("http://localhost:8000/comments?_expand=post").then(res=>{
+//       console.log(res.data)
+//     })
+//   } 
   useEffect(() => {
     axios.get("/news?publishState=2&_expand=category&_sort=view&_order=desc&_limit=6").then(res => {
       setviewList(res.data)
